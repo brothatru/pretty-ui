@@ -1,0 +1,57 @@
+.btn {
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  outline: none;
+  padding: 12px 24px;
+}
+
+$blue: rgb(50, 57, 178);
+$green: rgb(87, 174, 44);
+$orange: rgb(255, 189, 29);
+$purple: rgb(144, 19, 254);
+
+$colors: (
+  'blue': $blue,
+  'green': $green,
+  'orange': $orange,
+  'purple': $purple,
+);
+
+@each $name, $color in $colors {
+  .#{$name} {
+    background-color: $color;
+    color: #fff;
+    &:active:hover {
+      background-color: darken($color: $color, $amount: 5);
+    }
+    &:hover {
+      background-color: lighten($color: $color, $amount: 5);
+    }
+  }
+}
+
+// .blue {
+//   $color: rgb(52, 52, 160);
+//   background-color: $color;
+//   color: #fff;
+//   &:active:hover {
+//     background-color: darken($color: $color, $amount: 20);
+//   }
+//   &:hover {
+//     background-color: lighten($color: $color, $amount: 10);
+//   }
+// }
+
+// .green {
+//   $color: rgb(86, 148, 86);
+//   background-color: $color;
+//   color: #fff;
+//   &:active:hover {
+//     background-color: darken($color: $color, $amount: 20);
+//   }
+//   &:hover {
+//     background-color: lighten($color: $color, $amount: 10);
+//   }
+// }
